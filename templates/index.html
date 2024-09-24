@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diabetes Prediction</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Diabetes Prediction</h1>
+        <form action="/predict" method="post">
+            <label for="gender">Gender:</label>
+            <select name="gender" required>
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+            </select><br>
+
+            <label for="age">Age:</label>
+            <input type="number" step="any" name="age" required><br>
+
+            <label for="hypertension">Hypertension (1 for Yes, 0 for No):</label>
+            <input type="number" step="1" min="0" max="1" name="hypertension" required><br>
+
+            <label for="heart_disease">Heart Disease (1 for Yes, 0 for No):</label>
+            <input type="number" step="1" min="0" max="1" name="heart_disease" required><br>
+
+            <label for="smoking_history">Smoking History:</label>
+            <select name="smoking_history" required>
+                <option value="never">Never</option>
+                <option value="current">Current</option>
+                <option value="former">Former</option>
+                <option value="ever">Ever</option>
+                <option value="No Info">No Info</option>
+            </select><br>
+
+            <label for="bmi">BMI:</label>
+            <input type="number" step="any" name="bmi" required><br>
+
+            <label for="HbA1c_level">HbA1c Level:</label>
+            <input type="number" step="any" name="HbA1c_level" required><br>
+
+            <label for="blood_glucose_level">Blood Glucose Level:</label>
+            <input type="number" step="any" name="blood_glucose_level" required><br>
+
+            <input type="submit" value="Predict">
+        </form>
+    </div>
+</body>
+</html>
